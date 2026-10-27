@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "template_type": "portable_spec_not_native_import",
+  "enabled": false,
+  "name": "每日日记",
+  "timezone": "Asia/Shanghai",
+  "schedule": {
+    "frequency": "daily",
+    "local_time": "23:30"
+  },
+  "execution": {
+    "new_chat_each_run": true,
+    "environment": "local_with_knowledge_access",
+    "knowledge_root": "<KNOWLEDGE_ROOT>",
+    "prompt_file": "templates/automations/daily-diary.prompt.md",
+    "model_selection": "select_before_each_run_by_complexity_and_importance",
+    "reasoning_selection": "select_before_each_run_by_complexity_and_importance",
+    "overlap_policy": "single_writer_skip_and_report_if_busy"
+  },
+  "sources": {
+    "local_roots": [],
+    "authorized_connected_sources": []
+  },
+  "coverage": {
+    "target_date": "local_date_at_run_start",
+    "cutoff": "run_started_at",
+    "historical_backfill": false
+  },
+  "writes": {
+    "diary": "memory/日记/YYYY/MM/YYYY-MM-DD.md",
+    "audit": "audit/knowledge-updates.jsonl",
+    "update_verified_project_knowledge_only_when_authorized": true
+  },
+  "notifications": {
+    "destination": "task_owner_in_scheduler",
+    "events": [
+      "material_change",
+      "completed_with_changes",
+      "failure",
+      "user_action_required"
+    ],
+    "unchanged": "silent",
+    "max_per_run": 1
+  }
+}
