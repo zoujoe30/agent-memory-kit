@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "routingPolicy": "workflows/项目路由与任务知识回写.md",
+  "projects": [
+    {
+      "id": "demo-notes",
+      "name": "示例笔记工具",
+      "aliases": [
+        "虚构笔记项目"
+      ],
+      "currentKnowledgeTarget": "memory/项目/demo-notes.md",
+      "knowledgeTargetStatus": "unverified"
+    }
+  ]
+}

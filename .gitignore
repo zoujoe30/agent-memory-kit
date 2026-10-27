@@ -1,0 +1,22 @@
+# Private knowledge. Existing tracked files require separate review.
+memory/**
+!memory/记忆首页.md
+!memory/**/
+!memory/**/.gitkeep
+index/local-paths.json
+audit/**
+!audit/.gitkeep
+archive/**
+!archive/.gitkeep
+environment/
+management/
+investment/
+.obsidian/
+**/.obsidian/
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+__pycache__/
+*.pyc
